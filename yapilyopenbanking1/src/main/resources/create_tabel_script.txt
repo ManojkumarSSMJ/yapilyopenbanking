@@ -1,0 +1,370 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               8.0.21 - MySQL Community Server - GPL
+-- Server OS:                    Win64
+-- HeidiSQL Version:             11.0.0.5919
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- Dumping structure for table openbanking.obkg_uk_acct_blce_crdt_lnk
+DROP TABLE IF EXISTS `obkg_uk_acct_blce_crdt_lnk`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_acct_blce_crdt_lnk` (
+  `OUA_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUA_BNK_ID` varchar(50) DEFAULT NULL,
+  `OUA_MBLE_NMBR` varchar(25) DEFAULT NULL,
+  `OUA_ACCT_ID` varchar(50) DEFAULT NULL,
+  `OUA_BLCE_IDFN_TYP` varchar(50) DEFAULT NULL,
+  `OUA_CRDT_IDFN_TYP` varchar(50) DEFAULT NULL,
+  `OUA_CRDT_AMT` varchar(100) DEFAULT NULL,
+  `OUA_CRDT_CRCY` varchar(20) DEFAULT NULL,
+  `OUA_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUA_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUA_ID` (`OUA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_acct_blce_lnk
+DROP TABLE IF EXISTS `obkg_uk_acct_blce_lnk`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_acct_blce_lnk` (
+  `OUA_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUA_BNK_ID` varchar(50) DEFAULT NULL,
+  `OUA_MBLE_NMBR` varchar(25) DEFAULT NULL,
+  `OUA_ACCT_ID` varchar(50) DEFAULT NULL,
+  `OUA_BLCE_IDFN_TYP` varchar(50) DEFAULT NULL,
+  `OUA_BLCE_FDT` varchar(50) DEFAULT NULL,
+  `OUA_BLCE` varchar(100) DEFAULT NULL,
+  `OUA_CRCY` varchar(20) DEFAULT NULL,
+  `OUA_CRDT_INCL` varchar(50) DEFAULT NULL,
+  `OUA_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUA_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUA_ID` (`OUA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=251 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_acct_dtl
+DROP TABLE IF EXISTS `obkg_uk_acct_dtl`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_acct_dtl` (
+  `OUA_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUA_BNK_ID` varchar(50) DEFAULT NULL,
+  `OUA_MBLE_NMBR` varchar(25) DEFAULT NULL,
+  `OUA_ACCT_ID` varchar(50) DEFAULT NULL,
+  `OUA_ACCT_NMBR` varchar(50) DEFAULT NULL,
+  `OUA_ACCT_TYP` varchar(50) DEFAULT NULL,
+  `OUA_ACCT_DSRN` varchar(500) DEFAULT NULL,
+  `OUA_ACCT_CRCY` varchar(50) DEFAULT NULL,
+  `OUA_ACCT_USGE_TYP` varchar(50) DEFAULT NULL,
+  `OUA_ACCT_STYP` varchar(50) DEFAULT NULL,
+  `OUA_ACCT_NCK_NME` varchar(50) DEFAULT NULL,
+  `OUA_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUA_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUA_ID` (`OUA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=185 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_acct_idfn_lnk
+DROP TABLE IF EXISTS `obkg_uk_acct_idfn_lnk`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_acct_idfn_lnk` (
+  `OUA_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUA_BNK_ID` varchar(50) DEFAULT NULL,
+  `OUA_MBLE_NMBR` varchar(25) DEFAULT NULL,
+  `OUA_ACCT_ID` varchar(50) DEFAULT NULL,
+  `OUA_ACCT_IDFN_TYP` varchar(50) DEFAULT NULL,
+  `OUA_ACCT_IDFN_VLE` varchar(100) DEFAULT NULL,
+  `OUA_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUA_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUA_ID` (`OUA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=408 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_acct_nme_lnk
+DROP TABLE IF EXISTS `obkg_uk_acct_nme_lnk`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_acct_nme_lnk` (
+  `OUA_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUA_BNK_ID` varchar(50) DEFAULT NULL,
+  `OUA_MBLE_NMBR` varchar(25) DEFAULT NULL,
+  `OUA_ACCT_ID` varchar(50) DEFAULT NULL,
+  `OUA_ACCT_NME` varchar(500) DEFAULT NULL,
+  `OUA_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUA_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUA_ID` (`OUA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=235 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_acct_txn_dtl
+DROP TABLE IF EXISTS `obkg_uk_acct_txn_dtl`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_acct_txn_dtl` (
+  `OUA_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUA_BNK_ID` varchar(50) DEFAULT NULL,
+  `OUA_MBLE_NMBR` varchar(25) DEFAULT NULL,
+  `OUA_ACCT_ID` varchar(50) DEFAULT NULL,
+  `OUA_TXN_ID` varchar(50) DEFAULT NULL,
+  `OUA_TXN_DT` varchar(50) DEFAULT NULL,
+  `OUA_BKNG_DT` varchar(50) DEFAULT NULL,
+  `OUA_VLUE_DT` varchar(50) DEFAULT NULL,
+  `OUA_TXN_STA` varchar(50) DEFAULT NULL,
+  `OUA_TXN_AMT` varchar(50) DEFAULT NULL,
+  `OUA_TXN_CRCY` varchar(50) DEFAULT NULL,
+  `OUA_SRCE_CRCY` varchar(50) DEFAULT NULL,
+  `OUA_DSTN_CRCY` varchar(50) DEFAULT NULL,
+  `OUA_UNT_CRCY` varchar(50) DEFAULT NULL,
+  `OUA_EXCG_RTE` varchar(50) DEFAULT NULL,
+  `OUA_CHRG_AMT` varchar(50) DEFAULT NULL,
+  `OUA_CHRG_CRCY` varchar(50) DEFAULT NULL,
+  `OUA_TXN_DSRN` varchar(2000) DEFAULT NULL,
+  `OUA_TXN_CDE` varchar(50) DEFAULT NULL,
+  `OUA_ISSR` varchar(75) DEFAULT NULL,
+  `OUA_BLCE_TYP` varchar(50) DEFAULT NULL,
+  `OUA_BLCE_AMT` varchar(50) DEFAULT NULL,
+  `OUA_BLCE_CRCY` varchar(50) DEFAULT NULL,
+  `OUA_TXN_RFRN` varchar(500) DEFAULT NULL,
+  `OUA_MRCH_CGRY_CDE` varchar(50) DEFAULT NULL,
+  `OUA_MRCH_NME` varchar(500) DEFAULT NULL,
+  `OUA_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUA_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUA_ID` (`OUA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=18600 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_apmt_mstr
+DROP TABLE IF EXISTS `obkg_uk_apmt_mstr`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_apmt_mstr` (
+  `OUA_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUA_TXN_ID` varchar(50) DEFAULT NULL,
+  `OUA_TXN_RRN` varchar(50) DEFAULT NULL,
+  `OUA_RIDT` timestamp NULL DEFAULT NULL,
+  `OUA_RADT` timestamp NULL DEFAULT NULL,
+  `OUA_RPCT` varchar(20) DEFAULT NULL,
+  `OUA_RDTA_SZE_KB` varchar(100) DEFAULT NULL,
+  `OUA_BNK_ID` varchar(50) DEFAULT NULL,
+  `OUA_RSPN_CDE` varchar(50) DEFAULT NULL,
+  `OUA_RSPN_DSRN` varchar(500) DEFAULT NULL,
+  `OUA_TXN_STA` char(1) DEFAULT NULL,
+  `OUA_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUA_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUA_ID` (`OUA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=813 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_txn_mstr
+DROP TABLE IF EXISTS `obkg_uk_txn_mstr`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_txn_mstr` (
+  `OUT_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUT_TXN_ID` varchar(50) DEFAULT NULL,
+  `OUT_TXN_DSRN` varchar(50) DEFAULT NULL,
+  `OUT_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUT_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUT_ID` (`OUT_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=815 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_upd_dt
+DROP TABLE IF EXISTS `obkg_uk_upd_dt`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_upd_dt` (
+  `OUA_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUA_BNK_ID` varchar(50) DEFAULT NULL,
+  `OUA_MBLE_NMBR` varchar(25) DEFAULT NULL,
+  `OUA_UPD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUA_ID` (`OUA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_usr_mstr
+DROP TABLE IF EXISTS `obkg_uk_usr_mstr`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_usr_mstr` (
+  `OYU_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OYU_ROLE` varchar(50) DEFAULT NULL,
+  `OYU_CSTR_NME` varchar(100) DEFAULT NULL,
+  `OYU_MBLE_NMBR` varchar(25) DEFAULT NULL,
+  `OYU_USR_ID` varchar(50) DEFAULT NULL,
+  `OYU_PSS_WRD` varchar(1000) DEFAULT NULL,
+  `OYU_ACT_STA` char(1) DEFAULT NULL,
+  `OYU_PSS_WRD_STA` char(1) DEFAULT NULL,
+  `OYU_IATM` int DEFAULT NULL,
+  `OYU_LOGIN_AUTH_FLG` varchar(10) DEFAULT NULL,
+  `OYU_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OYU_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OYU_ID` (`OYU_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_ybnk_flnk
+DROP TABLE IF EXISTS `obkg_uk_ybnk_flnk`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_ybnk_flnk` (
+  `OUY_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUY_BNK_ID` varchar(50) DEFAULT NULL,
+  `OUY_FTR_ID` varchar(100) DEFAULT NULL,
+  `OUY_FTR_NME` varchar(250) DEFAULT NULL,
+  `OUY_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUY_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUY_ID` (`OUY_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=601 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_ybnk_mstr
+DROP TABLE IF EXISTS `obkg_uk_ybnk_mstr`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_ybnk_mstr` (
+  `OUY_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUY_BNK_ID` varchar(50) DEFAULT NULL,
+  `OUY_BNK_NME` varchar(50) DEFAULT NULL,
+  `OUY_BNK_FNME` varchar(50) DEFAULT NULL,
+  `OUY_BNK_CNRY` varchar(50) DEFAULT NULL,
+  `OUY_BNK_LGO_URL` varchar(100) DEFAULT NULL,
+  `OUY_BNK_ICN_URL` varchar(100) DEFAULT NULL,
+  `OUY_BNK_UPD_HRS` varchar(30) DEFAULT NULL,
+  `OUY_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUY_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUY_ID` (`OUY_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_ylnk_mstr
+DROP TABLE IF EXISTS `obkg_uk_ylnk_mstr`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_ylnk_mstr` (
+  `OUY_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUY_MBLE_NMBR` varchar(25) DEFAULT NULL,
+  `OUY_UUID` varchar(50) DEFAULT NULL,
+  `OUY_AUID` varchar(50) DEFAULT NULL,
+  `OUY_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUY_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUY_ID` (`OUY_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_yply_cnfg_mstr
+DROP TABLE IF EXISTS `obkg_uk_yply_cnfg_mstr`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_yply_cnfg_mstr` (
+  `OUY_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUY_YPLY_ID` varchar(100) DEFAULT NULL,
+  `OUY_CEXP_MCNT` int DEFAULT NULL,
+  `OUY_TSTR_MCNT` int DEFAULT NULL,
+  `OUY_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUY_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUY_ID` (`OUY_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_yply_ddbt_mstr
+DROP TABLE IF EXISTS `obkg_uk_yply_ddbt_mstr`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_yply_ddbt_mstr` (
+  `OUA_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUA_MBLE_NMBR` varchar(50) DEFAULT NULL,
+  `OUA_BNK_ID` varchar(50) DEFAULT NULL,
+  `OUA_ACCT_ID` varchar(50) DEFAULT NULL,
+  `OUA_DDBT_ID` varchar(50) DEFAULT NULL,
+  `OUA_DDBT_STUS` varchar(50) DEFAULT NULL,
+  `OUA_PYEE_NME` varchar(100) DEFAULT NULL,
+  `OUA_RFRE` varchar(200) DEFAULT NULL,
+  `OUA_PRV_PYMT_AMT` varchar(50) DEFAULT NULL,
+  `OUA_PRV_PYMT_CRCY` varchar(50) DEFAULT NULL,
+  `OUA_PRV_PYMT_DT` varchar(50) DEFAULT NULL,
+  `OUA_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUA_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUA_ID` (`OUA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_yply_sodr_idfn_lnk
+DROP TABLE IF EXISTS `obkg_uk_yply_sodr_idfn_lnk`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_yply_sodr_idfn_lnk` (
+  `OUA_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUA_MBLE_NMBR` varchar(50) DEFAULT NULL,
+  `OUA_BNK_ID` varchar(50) DEFAULT NULL,
+  `OUA_ACCT_ID` varchar(50) DEFAULT NULL,
+  `OUA_SODR_ID` varchar(50) DEFAULT NULL,
+  `OUA_IDFN_TYP` varchar(50) DEFAULT NULL,
+  `OUA_IDFN_VLUE` varchar(50) DEFAULT NULL,
+  `OUA_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUA_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUA_ID` (`OUA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1011 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_yply_sodr_mstr
+DROP TABLE IF EXISTS `obkg_uk_yply_sodr_mstr`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_yply_sodr_mstr` (
+  `OUA_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUA_MBLE_NMBR` varchar(50) DEFAULT NULL,
+  `OUA_BNK_ID` varchar(50) DEFAULT NULL,
+  `OUA_ACCT_ID` varchar(50) DEFAULT NULL,
+  `OUA_SODR_ID` varchar(50) DEFAULT NULL,
+  `OUA_SODR_STUS` varchar(50) DEFAULT NULL,
+  `OUA_PYEE_NME` varchar(100) DEFAULT NULL,
+  `OUA_RFRE` varchar(200) DEFAULT NULL,
+  `OUA_FRST_PYMT_AMT` varchar(50) DEFAULT NULL,
+  `OUA_FRST_PYMT_CRCY` varchar(50) DEFAULT NULL,
+  `OUA_FRST_PYMT_DT` varchar(50) DEFAULT NULL,
+  `OUA_NXT_PYMT_AMT` varchar(50) DEFAULT NULL,
+  `OUA_NXT_PYMT_CRCY` varchar(50) DEFAULT NULL,
+  `OUA_NXT_PYMT_DT` varchar(50) DEFAULT NULL,
+  `OUA_FNL_PYMT_AMT` varchar(50) DEFAULT NULL,
+  `OUA_FNL_PYMT_CRCY` varchar(50) DEFAULT NULL,
+  `OUA_FNL_PYMT_DT` varchar(50) DEFAULT NULL,
+  `OUA_FRQ_TYP` varchar(50) DEFAULT NULL,
+  `OUA_FRQ_INTRN_WK` varchar(50) DEFAULT NULL,
+  `OUA_FRQ_EXTN_DY` varchar(10) DEFAULT NULL,
+  `OUA_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUA_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUA_ID` (`OUA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=780 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_yply_tkn_ftr_lnk
+DROP TABLE IF EXISTS `obkg_uk_yply_tkn_ftr_lnk`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_yply_tkn_ftr_lnk` (
+  `OUY_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUY_YPLY_UUID` varchar(75) DEFAULT NULL,
+  `OUY_CNST_ID` varchar(75) DEFAULT NULL,
+  `OUY_CNST_TKN` varchar(2000) DEFAULT NULL,
+  `OUY_CNST_STA` varchar(100) DEFAULT NULL,
+  `OUY_FTR_ID` varchar(75) DEFAULT NULL,
+  `OUY_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUY_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUY_ID` (`OUY_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table openbanking.obkg_uk_yply_tkn_mstr
+DROP TABLE IF EXISTS `obkg_uk_yply_tkn_mstr`;
+CREATE TABLE IF NOT EXISTS `obkg_uk_yply_tkn_mstr` (
+  `OUY_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `OUY_MBLE_NMBR` varchar(25) DEFAULT NULL,
+  `OUY_BNK_ID` varchar(75) DEFAULT NULL,
+  `OUY_YPLY_UUID` varchar(75) DEFAULT NULL,
+  `OUY_CNST_ID` varchar(75) DEFAULT NULL,
+  `OUY_CNST_TKN` varchar(2000) DEFAULT NULL,
+  `OUY_CNST_STA` varchar(100) DEFAULT NULL,
+  `OUY_CNST_CDT` timestamp NULL DEFAULT NULL,
+  `OUY_CNST_EXP_DT` timestamp NULL DEFAULT NULL,
+  `OUY_CRTD_DT` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OUY_MDFD_DT` timestamp NULL DEFAULT NULL,
+  UNIQUE KEY `OUY_ID` (`OUY_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Data exporting was unselected.
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
