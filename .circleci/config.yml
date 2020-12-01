@@ -7,3 +7,5 @@ workflows:
     jobs:
       - build
       - test
+      store_test_results:
+    path: test-results
