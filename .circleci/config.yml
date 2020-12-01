@@ -4,6 +4,6 @@ orbs:
 workflows:
   node-tests:
     jobs:
-      - install- node/test
+      - install-node/test
 store_test_results:
     path: test-results
